@@ -1,0 +1,2 @@
+# Isekaid
+Isekaid Shop
