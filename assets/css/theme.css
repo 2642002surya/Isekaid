@@ -1,0 +1,131 @@
+:root{
+  --bg:#06060a;
+  --panel: rgba(255,255,255,0.04);
+  --glass-border: rgba(255,255,255,0.06);
+  --accent1: #8a2be2; /* purple */
+  --accent2: #00d4ff; /* cyan */
+  --muted: rgba(255,255,255,0.35);
+  --success: #32cd32;
+  --danger: #ff3860;
+  --glass-blur: 10px;
+  --glass-radius: 12px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;padding:0;background:linear-gradient(180deg,#05040a 0%, #08060c 60%);color:#fff;font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial}
+
+.topbar{padding:20px 24px;text-align:center}
+.brand{font-weight:800;font-size:22px;background:linear-gradient(90deg,var(--accent1),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.subtitle{margin-top:6px;color:var(--muted);font-size:12px}
+
+.main{max-width:1200px;margin:18px auto;padding:12px}
+
+/* controls */
+.controls{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;margin-bottom:14px}
+#search{padding:10px 12px;border-radius:10px;border:1px solid var(--glass-border);background:var(--panel);color:#fff;min-width:220px}
+.selects{display:flex;gap:8px;align-items:center}
+.selects select{padding:8px 10px;border-radius:8px;border:1px solid var(--glass-border);background:var(--panel);color:#fff}
+
+/* view toggle & presets */
+.view-toggle{display:inline-flex;gap:8px;margin-left:12px}
+.view-toggle button{padding:8px 10px;border-radius:8px;border:1px solid var(--glass-border);background:transparent;color:#fff;cursor:pointer}
+.view-toggle button.active{box-shadow:0 0 18px var(--accent1);border-color:var(--accent2)}
+
+.preset-buttons{display:flex;gap:8px;margin-left:12px}
+.preset-buttons button{padding:8px 10px;border-radius:8px;background:transparent;border:1px solid var(--glass-border);cursor:pointer}
+
+/* results area */
+.results{display:grid;gap:20px}
+
+/* cards view default is big cards */
+.cards-view{grid-template-columns:repeat(auto-fit,minmax(280px,1fr));}
+
+/* grid view: smaller tiles */
+.grid-view{grid-template-columns:repeat(auto-fit,minmax(180px,1fr));}
+
+/* table view uses a single column with table inside */
+.table-view{grid-template-columns:1fr;padding:0}
+
+/* glass card */
+.card{
+  background:var(--panel);
+  border-radius:var(--glass-radius);
+  padding:14px;
+  border:1px solid var(--glass-border);
+  backdrop-filter:blur(var(--glass-blur));
+  transition:transform .18s ease,box-shadow .18s ease;
+  position:relative;
+  overflow:hidden;
+}
+.card:hover{transform:translateY(-6px);box-shadow:0 12px 40px rgba(138,43,226,0.14)}
+
+/* name and tags */
+.item-name{font-weight:700;font-size:18px}
+.tags{margin-top:8px;display:flex;gap:8px;flex-wrap:wrap}
+.tag{font-size:12px;padding:6px 8px;border-radius:8px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.04)}
+
+/* stats */
+.stats{margin-top:12px;font-size:13px;color:var(--muted);line-height:1.5}
+
+/* table style */
+.table-wrap{overflow:auto;border-radius:8px}
+.neon-table{width:100%;border-collapse:collapse;min-width:640px}
+.neon-table th, .neon-table td{padding:12px;border-bottom:1px solid rgba(255,255,255,0.04);text-align:left;font-size:13px}
+.neon-table th{color:var(--muted);font-weight:600}
+
+/* responsive */
+@media (max-width:720px){
+  .controls{grid-template-columns:1fr;gap:10px}
+  .selects{flex-wrap:wrap}
+  .preset-buttons{order:3}
+}
+/* Bigger, more professional cards */
+.big-card {
+  padding: 22px !important;
+  min-height: 260px;
+  border-radius: 18px !important;
+  font-size: 15px;
+}
+
+/* Larger name text */
+.big-card .item-name {
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+/* More spacing between tags & stats */
+.big-card .tags {
+  margin-bottom: 14px;
+}
+
+/* Stats block more readable */
+.big-card .stats {
+  font-size: 14px;
+  line-height: 20px;
+  margin-bottom: 16px;
+}
+
+/* Buttons area */
+.buy-area {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-top: 14px;
+}
+
+.qty-input {
+  width: 80px;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.add-btn {
+  padding: 8px 12px;
+}
+
+/* Summary/Detailed button */
+.stats-btn {
+  margin-top: 10px;
+  padding: 6px 10px;
+}

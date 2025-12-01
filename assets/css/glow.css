@@ -1,0 +1,21 @@
+/* Rarity glow utilities and animations (purple/blue theme) */
+
+@keyframes pulseBlue {
+  0%{box-shadow:0 0 6px rgba(0,212,255,0.06)}
+  50%{box-shadow:0 0 18px rgba(0,212,255,0.12)}
+  100%{box-shadow:0 0 6px rgba(0,212,255,0.06)}
+}
+
+@keyframes pulseGreen {
+  0%{box-shadow:0 0 6px rgba(50,205,50,0.06)}
+  50%{box-shadow:0 0 18px rgba(50,205,50,0.12)}
+  100%{box-shadow:0 0 6px rgba(50,205,50,0.06)}
+}
+
+.rarity-B { border: 1px solid rgba(30,144,255,0.25); box-shadow:0 0 10px rgba(30,144,255,0.06); }
+.rarity-B:hover { animation: pulseBlue 2.4s infinite; border-color: rgba(0,212,255,0.8); }
+.rarity-C { border: 1px solid rgba(50,205,50,0.25); box-shadow:0 0 10px rgba(50,205,50,0.06); }
+.rarity-C:hover { animation: pulseGreen 2.4s infinite; border-color: rgba(50,205,50,0.8); }
+
+/* subtle rank glow */
+.rank-r5 { box-shadow: inset 0 0 24px rgba(138,43,226,0.04) }
